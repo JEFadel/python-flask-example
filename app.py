@@ -13,3 +13,4 @@ if __name__ == "__main__":
 
     # sudo apt install python3-pip
     # pip install -r requirements.txt
+    # Oi, profº, deixando esse comentário só pra não dizer que meu código ficou igual o de todo mundo :P
