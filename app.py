@@ -3,10 +3,14 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/health")
 
+@app.route("/")
+def hello_world():
+    return "Olá. professor!"
+
+@app.route("/health")
 def health():
-    return str(os.environ.get("STATUS"))
+    return "OK"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=(os.environ.get("APP_PORT")), debug=True)
@@ -15,5 +19,13 @@ if __name__ == "__main__":
     # pip install -r requirements.txt
     # Oi, profº, deixando esse comentário só pra não dizer que meu código ficou igual o de todo mundo :P
     
+    # git add .
+    # git commit -m [MENSAGEM]
+    # git push origin kubernetes/desafio-01
+
     # docker build . -t localhost:32000/app-flask:latest
-    # docker run --rm -d -e APP_PORT=3333
+    # docker save localhost:32000/app-flask:latest > myimage.tar
+    # microk8s ctr image import myimage.tar
+    # docker run --rm -d -e APP_PORT=3500 -p 3500:3500 localhost:32000/app-flask:latest
+
+    # kubectl port-forward 
