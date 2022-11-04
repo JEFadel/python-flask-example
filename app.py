@@ -16,7 +16,7 @@ def health():
 def counter():
     global count
     count += 1
-    return str(count)
+    return str(count) + "\n"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=(os.environ.get("APP_PORT")), debug=True)
